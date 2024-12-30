@@ -593,6 +593,9 @@ const sendRequestHandlers = {
   getCurrentTabUrl({ tab }) {
     return tab.url;
   },
+  getCurrentTabTitle({ tab }) {
+    return tab.title;
+  },
   openUrlInNewTab: mkRepeatCommand((request, callback) =>
     TabOperations.openUrlInNewTab(request, callback)
   ),

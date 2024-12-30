@@ -299,6 +299,7 @@ const Commands = {
       "reload",
       "hardReload",
       "copyCurrentUrl",
+      "copyCurrentUrlMarkdown",
       "openCopiedUrlInCurrentTab",
       "openCopiedUrlInNewTab",
       "goUp",
@@ -411,6 +412,7 @@ const defaultKeyMappings = {
   "r": "reload",
   "R": "hardReload",
   "yy": "copyCurrentUrl",
+  "ym": "copyCurrentUrlMarkdown",
   "p": "openCopiedUrlInCurrentTab",
   "P": "openCopiedUrlInNewTab",
   "gi": "focusInput",
@@ -503,6 +505,7 @@ const commandDescriptions = {
   toggleViewSource: ["View page source", { noRepeat: true }],
 
   copyCurrentUrl: ["Copy the current URL to the clipboard", { noRepeat: true }],
+  copyCurrentUrlMarkdown: ["Copy the current URL to the clipboard (formated as Markdown)", { noRepeat: true }],
   openCopiedUrlInCurrentTab: ["Open the clipboard's URL in the current tab", { noRepeat: true }],
   openCopiedUrlInNewTab: ["Open the clipboard's URL in a new tab", { repeatLimit: 20 }],
 

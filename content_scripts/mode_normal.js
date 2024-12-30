@@ -164,6 +164,19 @@ const NormalModeCommands = {
     });
   },
 
+  copyCurrentUrlMarkdown() {
+    chrome.runtime.sendMessage({handler: "getCurrentTabTitle" }, function (title) {
+      url_title = title;
+    }),
+    chrome.runtime.sendMessage({handler: "getCurrentTabUrl" }, function (url) {
+      HUD.copyToClipboard(`[${url_title}](${url})`);
+      if (28 < url.length) {
+        url = url.slice(0, 26) + "....";
+      }
+      HUD.show(`Yanked ${url}`, 2000);
+    });
+  },
+
   openCopiedUrlInNewTab(count) {
     HUD.pasteFromClipboard((url) =>
       chrome.runtime.sendMessage({ handler: "openUrlInNewTab", url, count })
